@@ -1,0 +1,14 @@
+<h2>URL</h2>
+<section class="address">
+  <div class="value loc">
+    <label>Posted By</label>
+    {{d-location-picker results=results show_results=true location=model.location}}
+  </div>
+</section>
+
+{{d-translation-edit model=model.info}}
+
+<section>
+  <button class="save" {{action 'save'}}>{{fa-icon 'save'}}</button>
+  {{#if model.id}}<button class="delete" {{action 'delete'}}>{{fa-icon 'trash'}}</button>{{/if}}
+</section>

@@ -1,0 +1,49 @@
+<h2>Address</h2>
+<section class="address">
+
+  <div class="value">
+    <label>Street</label>
+    {{input value=model.address.street}}
+  </div>
+
+  <div class="value">
+    <label>City</label>
+    {{input value=model.address.city}}
+  </div>
+
+  <div class="value">
+    <label>State</label>
+    {{input value=model.address.state}}
+  </div>
+
+  <div class="value">
+    <label>Zip</label>
+    {{input value=model.address.zip}}
+  </div>
+
+  <div class="value">
+    <label>Country</label>
+    {{input value=model.address.country}}
+  </div>
+
+  <div class="value">
+    <label>Phone</label>
+    {{input value=model.phone}}
+  </div>
+
+  <div class="value image-url">
+    <label>Image URL</label>
+    {{input value=model.image_url}}
+
+    {{#if model.image_url}}
+      <img src="{{model.image_url}}"/>
+    {{/if}}
+  </div>
+</section>
+
+{{d-translation-edit model=model.info}}
+
+<section>
+  <button class="save" {{action 'save'}}>{{fa-icon 'save'}}</button>
+  {{#if model.id}}<button class="delete" {{action 'delete'}}>{{fa-icon 'trash'}}</button>{{/if}}
+</section>

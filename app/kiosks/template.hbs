@@ -1,0 +1,16 @@
+<section class="kiosks">
+{{!-- #each model as |kiosk| --}}
+  <div class="card">
+    <h1>{{model.name}}</h1>
+
+    {{#sortable-group tagName="ul" onChange="reorderItems" as |group|}}
+      {{#each model.tiles as |tile|}}
+        {{#sortable-item tagName="li" model=tile group=group}}
+          {{tile.name}}
+          <span class="handle">&varr;</span>
+        {{/sortable-item}}
+      {{/each}}
+    {{/sortable-group}}
+  </div>
+{{!-- /each --}}
+</section>

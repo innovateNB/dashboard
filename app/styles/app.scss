@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+html, body {
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #f5f5f5;
+}
+
+body > .ember-view {
+  display: flex;
+}
+
+h1 {
+  color: #555;
+  font-size: 40px;
+  font-weight: 200;
+  width: 500px;
+}
+
+.navigation {
+  background: #333440;
+  height: 100vh;
+  max-height: 100%;
+  float: left;
+  display: flex;
+  flex-flow: column;
+
+  .session {
+    display: flex;
+    flex-flow: column;
+    padding: 20px;
+    align-items: center;
+
+    img {
+      border-radius: 50%;
+      border: 3px solid #AAA;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 5px;
+    }
+
+    a {
+      color: #FFF;
+    }
+
+    button {
+      color: #FFF;
+      background: none;
+    }
+  }
+
+  > a {
+    color: #ffffff;
+    background: #333440;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 200;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #65677d;
+    transition: background-color .5s;
+
+    i {
+      margin-right: 15px;
+    }
+
+    span {
+      margin-left: auto;
+    }
+
+    &:hover {
+      background: #65677d;
+    }
+  }
+}
+
+main {
+  padding: 20px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  overflow-y: scroll;
+
+  section#login {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      width: 500px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.locations, .events, .videos, .tags {
+  /*border: 1px solid #646ba0;*/
+  background: #FFF;
+  margin: 0px auto;
+  width: 100%;
+  flex-flow: column;
+
+  .row {
+    text-align: left;
+    padding: 5px 10px;
+    display:flex;
+    flex-flow: row wrap;
+    border-bottom: 1px solid #F0F0F0;
+
+    transition: all 1s;
+
+    span {
+
+      flex-flow: row nowrap;
+      flex-basis: 0;
+      flex-grow: 1;
+      
+      line-height: 30px;
+
+      &.color input {
+        padding: 5px 10px;
+        font-size: 15px;
+        /*box-shadow: inset 0px 0px 5px 1px #DDD;*/
+        border: 1px solid #DDD;
+      }
+
+      &.name {
+        flex-grow: 1;
+      }
+
+      &.phone {
+        flex-grow: 0.5;
+      }
+
+      &.description {
+        flex-grow: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+        margin-right: 20px;
+      }
+
+      .lang {
+        color: #FFF;
+        padding: 4px;
+        text-transform: uppercase;
+        font-size: 12px;
+        margin-right: 5px;
+
+        &.en {
+          background: #42fd82;
+        }
+
+        &.es {
+          background: #4297fd;
+        }
+      }
+    }
+
+    &.headers {
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.kiosks {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0px auto;
+
+  li {
+    display: block;
+    padding: 8px;
+    font-size: 18px;
+    box-shadow: 0px 1px 5px #DDD;
+    margin-bottom: 10px;
+  }
+}
+
+.tags {
+  max-width: 800px;
+  background: none;
+
+  width: 100%;
+  display: flex !important;
+  flex-flow: column !important;
+  flex-shrink: 0 !important;
+
+  h1 {
+    max-width: 800px;
+  }
+
+  .new {
+    margin-bottom: 10px;
+    align-self: flex-end;
+  }
+
+  .row {
+    background: #FFF;
+    float:left;
+    clear: left;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 20px;
+
+    span {
+      line-height: normal;
+
+      input {
+        align-self: center;
+        vertical-align: middle;
+        display: inline-block;
+      }
+    }
+
+    span, .value, .f-row.language-picker {
+      float: left;
+      clear: left;
+    }
+  }
+
+  .demo {
+    min-width: 150px;
+    max-width: 150px;
+    margin-right: 10px;
+    float: left;
+    padding: 8px;
+    letter-spacing: 1px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    transition: background-color .25s;
+    text-shadow: 0 1px rgba(0,0,0,.47);
+    cursor: pointer;
+    display: block;
+    border-radius: 2px;
+    border: none !important;
+    box-shadow: inset 0 1px #3dcaff, 0 5px #0A96CC, 0 3px 5px rgba(0,0,0,.3);
+    background-color: #22C3FF;
+  }
+
+  .ember-col-pick {
+    height: 39px;
+  }
+}
+
+.actions {
+  flex-grow: 0 !important;
+  text-align: right;
+
+  button {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    color: #FFF;
+    cursor: pointer;
+  }
+}
+
+.card {
+  background: #FFF;
+  margin: 0px auto;
+  padding: 10px;
+  flex-flow: column;
+}
+
+.location, .event, .video, .tags {
+  width: 100%;
+  
+  display: flex;
+  flex-flow: row wrap;
+  flex-shrink: 0;
+
+  section {
+    float: left;
+    clear: left;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+
+    padding: 20px 0px;
+    border-bottom: 1px solid #ddd;
+
+    .lang {
+      font-size: 12px;
+      font-weight: 200;
+      color: #DDD;
+    }
+  }
+
+  .value {
+    display: flex;
+    flex-flow: column;
+    margin: 0px 10px 10px 0px;
+    flex-grow: 1;
+
+    label {
+      margin-bottom: 5px;
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+
+    input, textarea {
+      padding: 5px 10px;
+      font-size: 15px;
+      /*box-shadow: inset 0px 0px 5px 1px #DDD;*/
+      border: 1px solid #DDD;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+    }
+
+    &.loc, &.image-url {
+      flex: 1 0 300px;
+      max-width: 300px;
+
+      input {
+        margin-bottom: 10px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+
+  select, button {
+    font-size: 16px;
+    height: 40px;
+
+    min-width: 40px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  select {
+    border: 1px solid #DDD;
+    min-width: 90px;
+  }  
+}
+
+.language-picker {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.save {
+  background: #2af77d;
+  color: #FFF;
+}
+
+.cancel, .delete {
+  background: #f72a61;
+  color: #FFF;
+}
+
+.add {
+  background: #2a71f7;
+  color: #FFF;
+}
+
+.edit {
+  background: #36efa3;
+}
+
+.new {
+  color: #FFF;
+  background: #f33434;
+}
+
+.languages {
+  width: 100%;
+}
+
+.languages span {
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+
+
+  .delete {
+    background: #f72a61;
+    color: #FFF;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    margin-right: 10px;
+  }
+
+  h2 {
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
+
+.f-row {
+  flex-flow: row wrap !important;
+}
+
+.f-col {
+  flex-flow: column !important;
+}
+
+section#index {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0px auto;
+  overflow: hidden;
+
+  iframe {
+    width: 50%;
+    float: left;
+    padding: 10px;
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  align-items: center;
+  margin-bottom: 10px;
+
+  h1 {
+    display: inline-block;
+    margin-right: auto;
+  }
+
+  .search {
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+    background: #f5f5f5;
+    border: 1px solid #DDD;
+    margin-left: auto;
+  }
+}
+
+.location-picker {
+
+  input {
+    width: 100%;
+  }
+
+  .results {
+    position: absolute;
+    width: 326px;
+    background: #FFF;
+    border: 1px solid #EFEFEF;
+    overflow-y: scroll;
+    max-height: 200px;
+    overflow-x: hidden;
+
+    span {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      padding-left: 5px;
+      padding-right: 5px;
+      display: inline-block;
+      width: 100%;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    span:nth-of-type(2n) {
+      background: #DDD;
+    }
+  }
+}
+
+.form {
+  background-color: #FFF;
+  box-shadow: 0 1px 1px 0 #BBB;
+  padding: 20px;
+  overflow: hidden;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+
+  input {
+    border: 1px solid #DDD;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+    color: #FFF;
+    background: #009fff;
+  }
+
+  label {
+    font-size: 14px;
+    color: #555;
+  }
+
+  a {
+    color: #333;
+    font-size: 12px;
+    align-self: flex-end;
+    padding-top: 5px;
+  }
+}

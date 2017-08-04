@@ -1,0 +1,27 @@
+{{#each translations as |info|}}
+  <span>
+    <button class="delete" {{action 'delete_language' info.iso}}>{{fa-icon 'times'}}</button>
+    <h2>{{iso-to-lang info.iso}}</h2><span class="lang">({{info.iso}})</span>
+  </span>
+
+  {{#each-in info.model as |key val|}}
+    <div class="value">
+      <label>{{key}}</label>
+      {{input value=(get info.model key)}}
+      {{!-- {{textarea value=info.description}} --}}
+    </div>
+  {{/each-in}}
+{{else}}
+  No Translations!  
+{{/each}}
+
+{{#if languages_available}}
+  <div class="f-row language-picker">
+    {{#x-select value=language_to_add as |xs|}}
+      {{#each languages_available as |l|}}
+        {{#xs.option value=l.iso}}{{l.language}}{{/xs.option}}
+      {{/each}}
+    {{/x-select}}
+    <button class="add" {{action 'add_language'}}>{{fa-icon 'plus-circle'}}</button>
+  </div>
+{{/if}}

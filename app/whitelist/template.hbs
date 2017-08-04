@@ -1,0 +1,21 @@
+<header>
+  <h1>Whitelist</h1>
+</header> 
+
+<div class="locations">
+  <div class="row headers">
+    <span class="name">URL</span>
+    <span class="description">Policy</span>
+    <span class="phone">Requests</span>
+    <span class="actions">{{#link-to 'locations.new'}}<button class="new">{{fa-icon 'plus' title='New Location'}}</button>{{/link-to}}</span>
+  </div>
+
+  {{#each model as |filter|}}
+    <section class="row">
+      <span class="name">{{filter.filter}}</span>
+      <span class="description">{{filter.policy}}</span>
+      <span class="">{{filter.requests}}</span>
+
+    </section>
+  {{/each}}
+</div>

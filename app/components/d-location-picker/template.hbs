@@ -1,0 +1,9 @@
+{{input value=input placeholder="Search for location" disabled=not_editing}}
+{{#if not_editing}}<button {{action 'edit'}} class="small save button">{{fa-icon 'pencil'}}</button>{{/if}}
+{{#if results}} 
+  <div class="results">
+    {{#each results as |result|}}
+      <span{{action 'select' result}}>{{result.info.en.name}}</span>
+    {{/each}}
+  </div>
+{{/if}}

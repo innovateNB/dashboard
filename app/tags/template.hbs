@@ -1,0 +1,7 @@
+<div class="tags">
+  <h1>Tags</h1>
+  <button class="new">{{fa-icon 'plus' title='New Tag'}}</button>
+  {{#each model as |tag|}}
+    {{d-tag model=tag}}
+  {{/each}}
+</div>

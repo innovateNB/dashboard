@@ -1,0 +1,8 @@
+<section class="session">
+  <img src="https://www.gravatar.com/avatar/{{md5 api.session.email}}?s=200"/>
+  <a href="#">{{api.session.username}}</a>
+  <button {{action 'logout'}}>Logout</button>
+</section>
+{{#each items as | item |}}
+  {{#link-to item.route}}{{fa-icon item.icon}} <span>{{item.route}}</span>{{/link-to}}
+{{/each}}

@@ -1,0 +1,16 @@
+<header>
+  <h1>Videos</h1>
+  {{input value=search placeholder="Search" class="search"}}
+</header> 
+
+<div class="videos">
+  <div class="row headers">
+    <span class="name">Title</span>
+    <span class="description">Languages</span>
+    <span class="actions">{{#link-to 'videos.new'}}<button class="new">{{fa-icon 'plus' title='New Location'}}</button>{{/link-to}}</span>
+  </div>
+
+  {{#each model as |video|}}
+    {{d-video model=video}}
+  {{/each}}
+</div>

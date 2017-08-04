@@ -1,0 +1,5 @@
+<span class="name">{{model.info.en.title}}</span>
+<span class="description">{{#each-in model.info as |tag|}}<span class="lang {{tag}}" title="{{get (get model.info tag) 'description'}}">{{tag}}</span>{{/each-in}}</span>
+<span class="actions">
+  {{#link-to 'videos.edit' model.id}}<button class="edit">{{fa-icon 'pencil'}}</button>{{/link-to}}
+</span>

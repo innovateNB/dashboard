@@ -1,0 +1,8 @@
+<span class="name">{{d-translation-edit model=model.info i18n_model=i18n_model}} </span>
+<span class="color">
+  {{col-pick-input value=model.color}}
+
+  <div 
+    class="demo"
+    style="background-color: #{{model.color}}; box-shadow: inset 0 1px {{ luminance hex=model.color lum=0.2}}, 0 5px {{ luminance hex=model.color lum=-0.2}}, 0 3px 5px rgba(0, 0, 0, 0.3);">{{model.info.en.name}}</div>
+</span>

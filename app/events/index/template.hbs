@@ -1,0 +1,15 @@
+<h1>Events</h1>
+
+<div class="locations">
+  <div class="row headers">
+    <span class="name">Name</span>
+    <span class="description">Languages</span>
+    <span class="date start">Start</span>
+    <span class="date end">End</span>
+    <span class="actions">{{#link-to 'events.new'}}<button class="new">{{fa-icon 'plus' title='New Event'}}</button>{{/link-to}}</span>
+  </div>
+
+  {{#each model as |event|}}
+    {{d-event model=event}}
+  {{/each}}
+</div>

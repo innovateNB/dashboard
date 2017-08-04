@@ -1,0 +1,9 @@
+<label>Username</label>
+{{input insert-newline='register' value=username placeholder="GovernorGuy111"}}
+<label>Password</label>
+{{input insert-newline='register' value=password type='password' placeholder='Super Secret Password'}}
+<label>Email</label>
+{{input insert-newline='register' value=email type='email' placeholder='example@site.com'}}
+<button {{action 'register'}}>{{fa-icon "pencil"}} Register</button>
+
+{{error}}

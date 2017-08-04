@@ -1,0 +1,8 @@
+<span class="name">{{model.info.en.title}}</span>
+<span class="description">{{#each-in model.info as |tag|}}<span class="lang {{tag}}" title="{{get (get model.info tag) 'description'}}">{{tag}}</span>{{/each-in}}</span>
+<span class="date start">{{model.start}}</span>
+<span class="date start">{{model.end}}</span>
+<span class="loc">{{#link-to 'locations.edit' model.location_id}}{{model.location.info.en.name}}{{/link-to}}</span>
+<span class="actions">
+  {{#link-to 'events.edit' model.id}}<button class="edit">{{fa-icon 'pencil'}}</button>{{/link-to}}
+</span>

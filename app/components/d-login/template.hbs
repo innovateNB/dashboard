@@ -1,0 +1,6 @@
+<label>Username</label>
+{{input insert-newline='login' value=username placeholder="GovernorGuy111"}}
+<label>Password</label>
+{{input insert-newline='login' value=password type='password' placeholder='Super Secret Password'}}
+<button {{action 'login'}}>{{fa-icon "unlock"}} Log In</button>
+{{#link-to 'register'}}Create an Account{{/link-to}}

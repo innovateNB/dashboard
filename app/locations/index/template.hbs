@@ -1,0 +1,17 @@
+<header>
+  <h1>Locations</h1>
+  {{input value=search placeholder="Search" class="search"}}
+</header> 
+
+<div class="locations">
+  <div class="row headers">
+    <span class="name">Name</span>
+    <span class="description">Languages</span>
+    <span class="phone">Phone</span>
+    <span class="actions">{{#link-to 'locations.new'}}<button class="new">{{fa-icon 'plus' title='New Location'}}</button>{{/link-to}}</span>
+  </div>
+
+  {{#each model as |location|}}
+    {{d-location model=location}}
+  {{/each}}
+</div>
